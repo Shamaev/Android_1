@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">A1L1_Лояуты</string>
+    <string name="ivanovo">Иваново</string>
+    <string name="yaroslavl">Ярославль</string>
+    <string name="moscow">Москва</string>
+    <string name="loudy">Пасмурно</string>
+    <string name="prev">Пред.</string>
+    <string name="next">След.</string>
+
+    <string-array name="cityslist">
+        <item>Иваново</item>
+        <item>Ярославль</item>
+        <item>Москва</item>
+    </string-array>
+</resources>
