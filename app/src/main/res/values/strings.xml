@@ -1,10 +1,18 @@
 <resources>
-    <string name="app_name">Simulator cat</string>
-    <string name="hello_world" translatable="false">Hello Cat!</string>
-    <string name="write_text">Name the cat...</string>
-    <string name="save_text">Lots of food</string>
-    <string name="option_1">fish</string>
-    <string name="option_2">meat</string>
-    <string name="btn1">Get name</string>
-    <string name="btn2">Eat cat</string>
+    <string name="app_name">A1L1_Layouts</string>
+    <string name="ivanovo">Ivanovo</string>
+    <string name="yaroslavl">Yaroslavl</string>
+    <string name="moscow">Moscow</string>
+    <string name="loudy">Сloudy</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="t_ivanovo" translatable="false">-5°</string>
+    <string name="t_yaroslavl" translatable="false">-6°</string>
+    <string name="t_moscow" translatable="false">-4°</string>
+
+    <string-array name="cityslist">
+        <item>Ivanovo</item>
+        <item>Yaroslavl</item>
+        <item>Moscow</item>
+    </string-array>
 </resources>

@@ -1,4 +1,4 @@
-package com.geekbrains.a1l1_intro;
+package com.geekbrains.a1l1_layouts;
 
 import org.junit.Test;
 

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Симулятор Кота</string>
-    <string name="write_text">Введите имя кота...</string>
-    <string name="save_text">Перекормить</string>
-    <string name="option_1">Рыба</string>
-    <string name="option_2">Мясо</string>
-    <string name="btn1">Назвать</string>
-    <string name="btn2">Накормить</string>
+    <string name="app_name">A1L1_Лояуты</string>
+    <string name="ivanovo">Иваново</string>
+    <string name="yaroslavl">Ярославль</string>
+    <string name="moscow">Москва</string>
+    <string name="loudy">Пасмурно</string>
+    <string name="prev">Пред.</string>
+    <string name="next">След.</string>
+
+    <string-array name="cityslist">
+        <item>Иваново</item>
+        <item>Ярославль</item>
+        <item>Москва</item>
+    </string-array>
 </resources>
