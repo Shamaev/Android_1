@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,15 +18,13 @@ import android.widget.Toast;
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button prev_button, next_button;
     private ImageView imageGerb;
-    private TextView nameCity, temperature;
+    private TextView nameCity, temperature, humidity, cloud;
     private int counterNext = 0;
     private int counterPrev = 0;
     private Spinner spinner;
-
-    private Vector<String> citiesListName = new Vector<>();
+    private CheckBox checkHum, checkCloud;
+    private String humidityStr, cloudStr;
     private Vector<Integer> citiesListImage = new Vector<>();
     private Vector<String> temperatureList = new Vector<>();
 
@@ -32,18 +32,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String instanceState;
+        if (savedInstanceState == null){
+            instanceState = "Первый запуск!";
+        }
+        else{
+            instanceState = "Повторный запуск!";
+        }
+        Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
+
 
         initViews();
         spinnerClick();
-        clickNext ();
+        setOnRadioBtnClick();
     }
 
     private void initViews() {
-        prev_button = findViewById(R.id.prev_click);
-        next_button = findViewById(R.id.next_click);
         nameCity = findViewById(R.id.name_city);
         temperature = findViewById(R.id.temperature);
         imageGerb = findViewById(R.id.gerbImg);
+        humidity = findViewById(R.id.humidity);
+        cloud = findViewById(R.id.cloud);
 
         spinner = findViewById(R.id.spinner_city);
 
@@ -53,11 +62,6 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
         spinner.setSelection(0);
 
-
-        citiesListName.add(0, getString(R.string.ivanovo));
-        citiesListName.add(1, getString(R.string.yaroslavl));
-        citiesListName.add(2, getString(R.string.moscow));
-
         citiesListImage.add(0, R.drawable.iconivanovo);
         citiesListImage.add(1, R.drawable.iconyaroslavl);
         citiesListImage.add(2, R.drawable.iconmoscow);
@@ -65,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         temperatureList.add(0, getString(R.string.t_ivanovo));
         temperatureList.add(1, getString(R.string.t_yaroslavl));
         temperatureList.add(2, getString(R.string.t_moscow));
+
+        checkHum = findViewById(R.id.humidityCheck);
+        checkCloud = findViewById(R.id.cloudCheck);
     }
 
 
@@ -83,58 +90,89 @@ public class MainActivity extends AppCompatActivity {
 
                 counterNext = number_position_city;
                 counterPrev = number_position_city;
-
-                // Тут я задаю цвет и размер шрифта. И это срабатывает, но при
-                // повороте экрана приложение падает. Пишет, что из-за этого
-//                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
-//                ((TextView) parent.getChildAt(0)).setTextSize(18);
             }
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
     }
 
-    private int sourceNext () {
-        counterNext++;
-        if (counterNext >2) {
-           return counterNext = 0;
-        }
-        return counterNext;
-    }
-
-    private int sourcePrev () {
-        counterPrev--;
-        if (counterPrev <0) {
-            return counterPrev = 2;
-        }
-        return counterPrev;
-    }
-
-    private void clickNext () {
-        prev_button.setOnClickListener(new View.OnClickListener() {
+    private void setOnRadioBtnClick() {
+        checkHum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int source = sourcePrev();
-                String nameCityPrev = String.valueOf(citiesListName.get(source));
-                nameCity.setText(nameCityPrev);
-                imageGerb.setImageResource(citiesListImage.get(source));
-
-                String temperatureStr = temperatureList.get(source);
-                temperature.setText(temperatureStr);
+                if(checkHum.isChecked())
+                    humidityStr = getString(R.string.humidity_43);
+                 else
+                    humidityStr = "";
+                humidity.setText(humidityStr);
             }
         });
-
-        next_button.setOnClickListener(new View.OnClickListener() {
+        checkCloud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int source = sourceNext();
-                String nameCityNext = String.valueOf(citiesListName.get(source));
-                nameCity.setText(nameCityNext);
-                imageGerb.setImageResource(citiesListImage.get(source));
-
-                String temperatureStr = temperatureList.get(source);
-                temperature.setText(temperatureStr);
+                if(checkCloud.isChecked())
+                    cloudStr = getString(R.string.cloud_80);
+                else
+                    cloudStr = "";
+                cloud.setText(cloudStr);
             }
         });
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle saveInstanceState){
+        super.onRestoreInstanceState(saveInstanceState);
+        Toast.makeText(getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()",
+                Toast.LENGTH_SHORT).show();
+        humidityStr = saveInstanceState.getString("HumidityStr");
+        cloudStr = saveInstanceState.getString("CloudStr");
+        humidity.setText(humidityStr);
+        cloud.setText(cloudStr);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle saveInstanceState){
+        Toast.makeText(getApplicationContext(), "onSaveInstanceState()", Toast.LENGTH_SHORT).show();
+        saveInstanceState.putString("HumidityStr", humidityStr);
+        saveInstanceState.putString("CloudStr", cloudStr);
+        super.onSaveInstanceState(saveInstanceState);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
+    }
+
 }

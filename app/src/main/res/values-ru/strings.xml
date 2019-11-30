@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">A1L1_Лояуты</string>
+    <string name="app_name">A1L3_activity</string>
     <string name="ivanovo">Иваново</string>
     <string name="yaroslavl">Ярославль</string>
     <string name="moscow">Москва</string>
-    <string name="loudy">Пасмурно</string>
-    <string name="prev">Пред.</string>
-    <string name="next">След.</string>
+    <string name="november_27">27 ноября</string>
+    <string name="humidity_43">Влажность: 43%</string>
+    <string name="cloud_80">Облачность: 80%</string>
+    <string name="humidity">Влажность</string>
+    <string name="cloud">Облачность</string>
 
     <string-array name="cityslist">
         <item>Иваново</item>

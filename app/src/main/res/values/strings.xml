@@ -1,14 +1,16 @@
 <resources>
-    <string name="app_name">A1L1_Layouts</string>
+    <string name="app_name">A1L3_activity</string>
     <string name="ivanovo">Ivanovo</string>
     <string name="yaroslavl">Yaroslavl</string>
     <string name="moscow">Moscow</string>
-    <string name="loudy">Сloudy</string>
-    <string name="prev">Prev</string>
-    <string name="next">Next</string>
     <string name="t_ivanovo" translatable="false">-5°</string>
     <string name="t_yaroslavl" translatable="false">-6°</string>
     <string name="t_moscow" translatable="false">-4°</string>
+    <string name="november_27">November 27</string>
+    <string name="humidity_43">Humidity: 43%</string>
+    <string name="cloud_80">Cloud: 80%</string>
+    <string name="humidity">Humidity</string>
+    <string name="cloud">Cloud</string>
 
     <string-array name="cityslist">
         <item>Ivanovo</item>
