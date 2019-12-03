@@ -9,6 +9,9 @@
     <string name="cloud_80">Облачность: 80%</string>
     <string name="humidity">Влажность</string>
     <string name="cloud">Облачность</string>
+    <string name="select_city">Выберите город</string>
+    <string name="show_weather">Показать погоду</string>
+    <string name="more_detailed">Подробнее</string>
 
     <string-array name="cityslist">
         <item>Иваново</item>
