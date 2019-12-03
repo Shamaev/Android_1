@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">A1L3_activity</string>
+    <string name="ivanovo">Ivanovo</string>
+    <string name="yaroslavl">Yaroslavl</string>
+    <string name="moscow">Moscow</string>
+    <string name="t_ivanovo" translatable="false">-5°</string>
+    <string name="t_yaroslavl" translatable="false">-6°</string>
+    <string name="t_moscow" translatable="false">-4°</string>
+    <string name="november_27">November 27</string>
+    <string name="humidity_43">Humidity: 43%</string>
+    <string name="cloud_80">Cloud: 80%</string>
+    <string name="humidity">Humidity</string>
+    <string name="cloud">Cloud</string>
+    <string name="select_city">Select city</string>
+    <string name="show_weather">Show weather</string>
+    <string name="more_detailed">More detailed</string>
+    <string name="urlIvanovo" translatable="false">https://yandex.ru/pogoda/ivanovo?from=serp_title</string>
+    <string name="urlYaroslavl" translatable="false">https://yandex.ru/pogoda/yaroslavl?from=serp_title</string>
+    <string name="urlMoscow" translatable="false">https://yandex.ru/pogoda/moscow?from=serp_title</string>
+
+    <string-array name="cityslist">
+        <item>Ivanovo</item>
+        <item>Yaroslavl</item>
+        <item>Moscow</item>
+    </string-array>
+</resources>
