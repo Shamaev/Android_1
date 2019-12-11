@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='A1L5_FR_HW'
+rootProject.name='A1L6_RecyclerView'

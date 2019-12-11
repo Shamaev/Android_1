@@ -1,4 +1,4 @@
-package com.geekbrains.a1l5_fr_hw;
+package com.geekbrains.a1l6_recyclerview;
 
 import org.junit.Test;
 

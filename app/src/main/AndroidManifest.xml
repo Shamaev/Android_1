@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.geekbrains.a1l5_fr_hw">
+    package="com.geekbrains.a1l6_recyclerview">
 
     <application
         android:allowBackup="true"
