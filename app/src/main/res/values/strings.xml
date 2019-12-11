@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">A1L6_RecyclerView</string>
+    <string name="add">Добавить</string>
+    <string name="remove">Удалить</string>
+    <string name="move">Переместить</string>
+</resources>
