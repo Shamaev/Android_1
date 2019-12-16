@@ -1,4 +1,4 @@
-package com.geekbrains.a1l6_recyclerview;
+package com.geekbrains.dasing2;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.geekbrains.a1l6_recyclerview", appContext.getPackageName());
+        assertEquals("com.geekbrains.dasing2", appContext.getPackageName());
     }
 }

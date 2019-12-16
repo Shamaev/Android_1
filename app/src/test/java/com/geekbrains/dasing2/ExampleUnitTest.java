@@ -1,4 +1,4 @@
-package com.geekbrains.a1l6_recyclerview;
+package com.geekbrains.dasing2;
 
 import org.junit.Test;
 
